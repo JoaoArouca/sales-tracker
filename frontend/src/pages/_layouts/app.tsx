@@ -1,3 +1,4 @@
+import { Header } from "@/components/header"
 import { Outlet, useNavigate } from "react-router-dom"
 
 export const AppLayout = () => {
