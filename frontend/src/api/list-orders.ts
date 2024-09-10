@@ -42,7 +42,7 @@ export interface ListOrdersResponse {
   pageSize: number
 }
 
-export async function ListOrders({
+export async function listOrders({
   pageNumber,
   pageSize,
   filterByDate,

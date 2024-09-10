@@ -4,7 +4,6 @@ import { enableMSW } from './api/mock'
 import { App } from './App'
 import './index.css'
 
-
 enableMSW().then(() => {
   ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
