@@ -1,19 +1,17 @@
-import { useEffect } from "react"
 import { Helmet, HelmetProvider } from "react-helmet-async"
 import { RouterProvider } from "react-router-dom"
 import { router } from "./lib/routes"
+import { QueryClientProvider, QueryClient } from 'react-query'
 
 export const App = () => {
-  useEffect(() => {
-    fetch('/orders')
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-  }, [])
+  const queryClient = new QueryClient()
 
   return (
-    <HelmetProvider>
-      <Helmet titleTemplate="%s | sales.tracker" />
-      <RouterProvider router={router} />
-    </HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <HelmetProvider>
+        <Helmet titleTemplate="%s | sales.tracker" />
+        <RouterProvider router={router} />
+      </HelmetProvider>
+    </QueryClientProvider>
   )
 }
