@@ -2,9 +2,9 @@ import { Spinner } from "@/components/ui/spinner";
 import { useInfiniteOrders } from "@/hooks/useInfiniteOrders"
 import { Helmet } from "react-helmet-async";
 import { Fragment } from "react/jsx-runtime";
-import { DashboardTable } from "../dashboard-table";
+import { OrdersTable } from "./orders-table";
 
-export const Dashboard = () => {
+export const Orders = () => {
   const {
     data,
     fetchNextPage,
@@ -23,8 +23,8 @@ export const Dashboard = () => {
 
   return (
     <Fragment>
-      <Helmet title="Dashboard" />
-      <DashboardTable meta={{ fetchNextPage, hasNextPage }} orders={orders} />
+      <Helmet title="Orders" />
+      <OrdersTable meta={{ fetchNextPage, hasNextPage }} orders={orders} />
     </Fragment>
   )
 }

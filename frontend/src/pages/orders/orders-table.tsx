@@ -6,7 +6,7 @@ import { useCustomScrollBar } from "@/hooks/useCustomScrollBar";
 import { OrdersColumns } from "@/value-objects/orders-columns";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-interface DashboardTableProps {
+interface OrdersdTableProps {
   orders: Order[];
   meta: {
     fetchNextPage: () => void;
@@ -14,12 +14,12 @@ interface DashboardTableProps {
   }
 }
 
-export const DashboardTable = ({ orders, meta }: DashboardTableProps) => {
+export const OrdersTable = ({ orders, meta }: OrdersdTableProps) => {
   const { fetchNextPage, hasNextPage } = meta;
   const { handleScroll, scrollProgress } = useCustomScrollBar();
 
   return (
-    <div>
+    <div className="p-2 rounded-sm border shadow">
       <ScrollProgressBar scrollProgress={scrollProgress} />
       <div
         id="scrollableDiv"
