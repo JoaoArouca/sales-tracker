@@ -10,12 +10,13 @@ interface OrdersdTableProps {
   orders: Order[];
   meta: {
     fetchNextPage: () => void;
-    hasNextPage?: boolean
+    hasNextPage?: boolean;
+    isLoadingOrders: boolean;
   }
 }
 
 export const OrdersTable = ({ orders, meta }: OrdersdTableProps) => {
-  const { fetchNextPage, hasNextPage } = meta;
+  const { fetchNextPage, hasNextPage, isLoadingOrders } = meta;
   const { handleScroll, scrollProgress } = useCustomScrollBar();
 
   return (
@@ -35,7 +36,7 @@ export const OrdersTable = ({ orders, meta }: OrdersdTableProps) => {
           onScroll={handleScroll}
           height={500}
         >
-          <TableComponent<Order> columns={OrdersColumns} tableData={orders} />
+          <TableComponent<Order> isLoadingData={isLoadingOrders} columns={OrdersColumns} tableData={orders} />
         </InfiniteScroll>
       </div>
     </div>

@@ -10,21 +10,28 @@ export const Orders = () => {
     fetchNextPage,
     hasNextPage,
     isLoading,
-    isError,
+    isError
   } = useInfiniteOrders({
     pageNumber: 1,
     pageSize: 15
   });
 
-  if (isLoading) return <Spinner />;
   if (isError) return <p>Erro ao carregar dados!</p>;
 
   const orders = data?.pages.flatMap(page => page.orders) || [];
 
+  const hasLoadingState = isLoading;
+
   return (
     <Fragment>
       <Helmet title="Orders" />
-      <OrdersTable meta={{ fetchNextPage, hasNextPage }} orders={orders} />
+      <h1 className="flex items-center gap-3 text-3xl font-bold tracking-tight">
+        Orders
+        {hasLoadingState && (
+          <Spinner />
+        )}
+      </h1>
+      <OrdersTable meta={{ fetchNextPage, hasNextPage, isLoadingOrders: isLoading }} orders={orders} />
     </Fragment>
   )
 }
