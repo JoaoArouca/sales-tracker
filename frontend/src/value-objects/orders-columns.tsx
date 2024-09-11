@@ -1,13 +1,14 @@
 import { Order } from "@/api/list-orders";
+import { StatusBadge } from "@/components/status-badge";
 import { TColumns } from "@/types/table-types";
 
 export const OrdersColumns: TColumns<Order> = [
   {
-    header: 'Order ID',
+    header: 'Order',
     accessorKey: 'id',
   },
   {
-    header: 'Customer ID',
+    header: 'Customer',
     accessorKey: 'customerId',
   },
   {
@@ -18,6 +19,7 @@ export const OrdersColumns: TColumns<Order> = [
   {
     header: 'Status',
     accessorKey: 'status',
+    cell: (info) => <StatusBadge status={info.getValue()} />
   },
   {
     header: 'Created At',
