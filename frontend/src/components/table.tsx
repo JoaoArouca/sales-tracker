@@ -16,7 +16,7 @@ export function TableComponent<T>({ columns, tableData, isLoadingData }: TablePr
         {getHeaderGroups().map(headerGroup => (
           <TableRow key={headerGroup.id}>
             {headerGroup.headers.map(header => (
-              <TableHead key={header.id}>
+              <TableHead key={header.id} className='text-gray-700'>
                 {flexRender(header.column.columnDef.header, header.getContext())}
               </TableHead>
             ))}
@@ -25,7 +25,7 @@ export function TableComponent<T>({ columns, tableData, isLoadingData }: TablePr
       </TableHeader>
       <TableBody>
         {isLoadingData && !tableData.length && <OrdersTableSkeleton />}
-        
+
         {tableData.length > 0 && getRowModel().rows.map(row => (
           <TableRow className='hover:bg-gray-100' key={row.id}>
             {row.getVisibleCells().map(cell => {
