@@ -32,7 +32,7 @@ export const listOrdersMock = http.get<never, never, ListOrdersResponse>(
         order.items.some((item) => filterByProducts.includes(item.productId))
       )
     }
-
+    
     if (filterByStatus) {
       filteredOrders = filteredOrders.filter((order) => filterByStatus.includes(order.status))
     }
