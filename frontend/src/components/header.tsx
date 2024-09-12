@@ -12,7 +12,7 @@ export function Header() {
             <Home className="h-4 w-4" />
             Home
           </NavLink>
-          <NavLink to="/orders">
+          <NavLink to="/list-orders">
             <ShoppingCart className="h-4 w-4" />
             Orders
           </NavLink>
