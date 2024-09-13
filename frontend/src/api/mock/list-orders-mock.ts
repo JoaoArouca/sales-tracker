@@ -1,6 +1,6 @@
 import { http, HttpResponse } from 'msw'
 import { ListOrdersResponse, Order } from '../list-orders'
-import { mockOrders } from './data/orders'
+import { orders as mockOrders } from './data/orders'
 import { compareDesc, isAfter, isSameDay, parseISO } from 'date-fns'
 
 const orders: Order[] = mockOrders

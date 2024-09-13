@@ -1,964 +1,687 @@
-import { Order, OrderStatus } from "../../list-orders";
+import { Order, OrderStatus } from "@/api/list-orders";
 
-export const mockOrders: Order[] = [
+export const orders: Order[] = [
   {
-    id: '1',
-    customerId: 'cust_1',
-    amount: 120.50,
-    status: OrderStatus.PENDING,
-    createdAt: '2023-08-01T10:15:00Z',
-    items: [
-      {
-        id: 'item_1',
-        productId: 'prod_1',
-        quantity: 2,
-        currentPrice: 60.25,
-        totalPrice: 120.50
-      }
-    ]
-  },
-  {
-    id: '2',
-    customerId: 'cust_2',
-    amount: 89.99,
-    status: OrderStatus.PROCESSING,
-    createdAt: '2023-08-02T11:00:00Z',
-    items: [
-      {
-        id: 'item_2',
-        productId: 'prod_2',
-        quantity: 1,
-        currentPrice: 89.99,
-        totalPrice: 89.99
-      }
-    ]
-  },
-  {
-    id: '3',
-    customerId: 'cust_3',
+    id: 'o1',
+    customerId: 'c1',
     amount: 299.99,
-    status: OrderStatus.SHIPPED,
-    createdAt: '2023-08-03T14:45:00Z',
-    items: [
-      {
-        id: 'item_3',
-        productId: 'prod_3',
-        quantity: 1,
-        currentPrice: 299.99,
-        totalPrice: 299.99
-      }
-    ]
-  },
-  {
-    id: '4',
-    customerId: 'cust_4',
-    amount: 45.00,
-    status: OrderStatus.DELIVERED,
-    createdAt: '2023-08-04T09:30:00Z',
-    items: [
-      {
-        id: 'item_4',
-        productId: 'prod_4',
-        quantity: 3,
-        currentPrice: 15.00,
-        totalPrice: 45.00
-      }
-    ]
-  },
-  {
-    id: '5',
-    customerId: 'cust_5',
-    amount: 78.75,
-    status: OrderStatus.CANCELED,
-    createdAt: '2023-08-05T13:20:00Z',
-    items: [
-      {
-        id: 'item_5',
-        productId: 'prod_5',
-        quantity: 5,
-        currentPrice: 15.75,
-        totalPrice: 78.75
-      }
-    ]
-  },
-  {
-    id: '6',
-    customerId: 'cust_6',
-    amount: 59.99,
-    status: OrderStatus.RETURNED,
-    createdAt: '2023-08-06T16:10:00Z',
-    items: [
-      {
-        id: 'item_6',
-        productId: 'prod_6',
-        quantity: 1,
-        currentPrice: 59.99,
-        totalPrice: 59.99
-      }
-    ]
-  },
-  {
-    id: '7',
-    customerId: 'cust_7',
-    amount: 250.00,
-    status: OrderStatus.REFUNDED,
-    createdAt: '2023-08-07T12:00:00Z',
-    items: [
-      {
-        id: 'item_7',
-        productId: 'prod_7',
-        quantity: 2,
-        currentPrice: 125.00,
-        totalPrice: 250.00
-      }
-    ]
-  },
-  {
-    id: '8',
-    customerId: 'cust_8',
-    amount: 149.99,
     status: OrderStatus.PENDING,
-    createdAt: '2023-08-08T08:50:00Z',
+    createdAt: '2024-09-01T12:00:00Z',
     items: [
-      {
-        id: 'item_8',
-        productId: 'prod_8',
-        quantity: 1,
-        currentPrice: 149.99,
-        totalPrice: 149.99
-      }
-    ]
+      { id: 'oi1', productId: 'p1', quantity: 1, currentPrice: 299.99, totalPrice: 299.99 },
+    ],
   },
   {
-    id: '9',
-    customerId: 'cust_9',
-    amount: 399.99,
+    id: 'o2',
+    customerId: 'c2',
+    amount: 999.99,
     status: OrderStatus.PROCESSING,
-    createdAt: '2023-08-09T15:40:00Z',
+    createdAt: '2024-09-02T13:00:00Z',
     items: [
-      {
-        id: 'item_9',
-        productId: 'prod_9',
-        quantity: 1,
-        currentPrice: 399.99,
-        totalPrice: 399.99
-      }
-    ]
+      { id: 'oi2', productId: 'p2', quantity: 1, currentPrice: 999.99, totalPrice: 999.99 },
+    ],
   },
   {
-    id: '10',
-    customerId: 'cust_10',
+    id: 'o3',
+    customerId: 'c3',
+    amount: 139.98,
+    status: OrderStatus.SHIPPED,
+    createdAt: '2024-09-03T14:00:00Z',
+    items: [
+      { id: 'oi3', productId: 'p3', quantity: 2, currentPrice: 49.99, totalPrice: 99.98 },
+      { id: 'oi4', productId: 'p4', quantity: 1, currentPrice: 89.99, totalPrice: 89.99 },
+    ],
+  },
+  {
+    id: 'o4',
+    customerId: 'c4',
+    amount: 69.98,
+    status: OrderStatus.DELIVERED,
+    createdAt: '2024-09-04T15:00:00Z',
+    items: [
+      { id: 'oi5', productId: 'p5', quantity: 1, currentPrice: 39.99, totalPrice: 39.99 },
+      { id: 'oi6', productId: 'p6', quantity: 1, currentPrice: 19.99, totalPrice: 19.99 },
+    ],
+  },
+  {
+    id: 'o5',
+    customerId: 'c5',
+    amount: 40.98,
+    status: OrderStatus.CANCELED,
+    createdAt: '2024-09-05T16:00:00Z',
+    items: [
+      { id: 'oi7', productId: 'p7', quantity: 1, currentPrice: 24.99, totalPrice: 24.99 },
+      { id: 'oi8', productId: 'p8', quantity: 1, currentPrice: 15.99, totalPrice: 15.99 },
+    ],
+  },
+  {
+    id: 'o6',
+    customerId: 'c6',
+    amount: 29.99,
+    status: OrderStatus.RETURNED,
+    createdAt: '2024-09-06T17:00:00Z',
+    items: [
+      { id: 'oi9', productId: 'p9', quantity: 1, currentPrice: 29.99, totalPrice: 29.99 },
+    ],
+  },
+  {
+    id: 'o7',
+    customerId: 'c7',
+    amount: 39.98,
+    status: OrderStatus.REFUNDED,
+    createdAt: '2024-09-07T18:00:00Z',
+    items: [
+      { id: 'oi10', productId: 'p10', quantity: 2, currentPrice: 19.99, totalPrice: 39.98 },
+    ],
+  },
+  {
+    id: 'o8',
+    customerId: 'c8',
+    amount: 250.98,
+    status: OrderStatus.PENDING,
+    createdAt: '2024-09-08T19:00:00Z',
+    items: [
+      { id: 'oi11', productId: 'p11', quantity: 2, currentPrice: 2.99, totalPrice: 5.98 },
+      { id: 'oi12', productId: 'p12', quantity: 1, currentPrice: 1.99, totalPrice: 1.99 },
+      { id: 'oi13', productId: 'p13', quantity: 1, currentPrice: 14.99, totalPrice: 14.99 },
+    ],
+  },
+  {
+    id: 'o9',
+    customerId: 'c9',
+    amount: 119.98,
+    status: OrderStatus.PROCESSING,
+    createdAt: '2024-09-09T20:00:00Z',
+    items: [
+      { id: 'oi14', productId: 'p14', quantity: 2, currentPrice: 9.99, totalPrice: 19.98 },
+      { id: 'oi15', productId: 'p15', quantity: 1, currentPrice: 79.99, totalPrice: 79.99 },
+    ],
+  },
+  {
+    id: 'o10',
+    customerId: 'c10',
+    amount: 249.97,
+    status: OrderStatus.SHIPPED,
+    createdAt: '2024-09-10T21:00:00Z',
+    items: [
+      { id: 'oi16', productId: 'p16', quantity: 1, currentPrice: 129.99, totalPrice: 129.99 },
+      { id: 'oi17', productId: 'p17', quantity: 1, currentPrice: 29.99, totalPrice: 29.99 },
+      { id: 'oi18', productId: 'p18', quantity: 2, currentPrice: 14.99, totalPrice: 29.98 },
+    ],
+  },
+  {
+    id: 'o11',
+    customerId: 'c11',
+    amount: 189.98,
+    status: OrderStatus.DELIVERED,
+    createdAt: '2024-09-11T22:00:00Z',
+    items: [
+      { id: 'oi19', productId: 'p19', quantity: 1, currentPrice: 199.99, totalPrice: 199.99 },
+      { id: 'oi20', productId: 'p20', quantity: 1, currentPrice: 49.99, totalPrice: 49.99 },
+    ],
+  },
+  {
+    id: 'o12',
+    customerId: 'c12',
+    amount: 119.95,
+    status: OrderStatus.RETURNED,
+    createdAt: '2024-09-12T23:00:00Z',
+    items: [
+      { id: 'oi21', productId: 'p4', quantity: 1, currentPrice: 89.99, totalPrice: 89.99 },
+      { id: 'oi22', productId: 'p6', quantity: 1, currentPrice: 19.99, totalPrice: 19.99 },
+      { id: 'oi23', productId: 'p8', quantity: 1, currentPrice: 15.99, totalPrice: 15.99 },
+    ],
+  },
+  {
+    id: 'o13',
+    customerId: 'c13',
+    amount: 79.98,
+    status: OrderStatus.CANCELED,
+    createdAt: '2024-09-13T00:00:00Z',
+    items: [
+      { id: 'oi24', productId: 'p7', quantity: 1, currentPrice: 24.99, totalPrice: 24.99 },
+      { id: 'oi25', productId: 'p11', quantity: 2, currentPrice: 2.99, totalPrice: 5.98 },
+    ],
+  },
+  {
+    id: 'o14',
+    customerId: 'c14',
+    amount: 429.96,
+    status: OrderStatus.REFUNDED,
+    createdAt: '2024-09-14T01:00:00Z',
+    items: [
+      { id: 'oi26', productId: 'p2', quantity: 1, currentPrice: 999.99, totalPrice: 999.99 },
+      { id: 'oi27', productId: 'p15', quantity: 2, currentPrice: 79.99, totalPrice: 159.98 },
+      { id: 'oi28', productId: 'p19', quantity: 1, currentPrice: 199.99, totalPrice: 199.99 },
+    ],
+  },
+  {
+    id: 'o15',
+    customerId: 'c15',
+    amount: 93.98,
+    status: OrderStatus.SHIPPED,
+    createdAt: '2024-09-15T02:00:00Z',
+    items: [
+      { id: 'oi29', productId: 'p9', quantity: 1, currentPrice: 29.99, totalPrice: 29.99 },
+      { id: 'oi30', productId: 'p10', quantity: 2, currentPrice: 19.99, totalPrice: 39.98 },
+    ],
+  },
+  {
+    id: 'o16',
+    customerId: 'c16',
+    amount: 24.98,
+    status: OrderStatus.DELIVERED,
+    createdAt: '2024-09-16T03:00:00Z',
+    items: [
+      { id: 'oi31', productId: 'p12', quantity: 1, currentPrice: 1.99, totalPrice: 1.99 },
+      { id: 'oi32', productId: 'p13', quantity: 1, currentPrice: 14.99, totalPrice: 14.99 },
+    ],
+  },
+  {
+    id: 'o17',
+    customerId: 'c17',
+    amount: 19.98,
+    status: OrderStatus.PENDING,
+    createdAt: '2024-09-17T04:00:00Z',
+    items: [
+      { id: 'oi33', productId: 'p5', quantity: 1, currentPrice: 39.99, totalPrice: 39.99 },
+      { id: 'oi34', productId: 'p6', quantity: 1, currentPrice: 19.99, totalPrice: 19.99 },
+    ],
+  },
+  {
+    id: 'o18',
+    customerId: 'c18',
+    amount: 204.95,
+    status: OrderStatus.PROCESSING,
+    createdAt: '2024-09-18T05:00:00Z',
+    items: [
+      { id: 'oi35', productId: 'p7', quantity: 1, currentPrice: 24.99, totalPrice: 24.99 },
+      { id: 'oi36', productId: 'p16', quantity: 1, currentPrice: 129.99, totalPrice: 129.99 },
+      { id: 'oi37', productId: 'p17', quantity: 1, currentPrice: 29.99, totalPrice: 29.99 },
+      { id: 'oi38', productId: 'p18', quantity: 2, currentPrice: 14.99, totalPrice: 29.98 },
+      { id: 'oi39', productId: 'p19', quantity: 1, currentPrice: 199.99, totalPrice: 199.99 },
+    ],
+  },
+  {
+    id: 'o19',
+    customerId: 'c19',
+    amount: 94.96,
+    status: OrderStatus.RETURNED,
+    createdAt: '2024-09-19T06:00:00Z',
+    items: [
+      { id: 'oi40', productId: 'p3', quantity: 1, currentPrice: 49.99, totalPrice: 49.99 },
+      { id: 'oi41', productId: 'p4', quantity: 1, currentPrice: 89.99, totalPrice: 89.99 },
+    ],
+  },
+  {
+    id: 'o20',
+    customerId: 'c20',
+    amount: 174.97,
+    status: OrderStatus.CANCELED,
+    createdAt: '2024-09-20T07:00:00Z',
+    items: [
+      { id: 'oi42', productId: 'p1', quantity: 1, currentPrice: 299.99, totalPrice: 299.99 },
+      { id: 'oi43', productId: 'p5', quantity: 2, currentPrice: 39.99, totalPrice: 79.98 },
+    ],
+  },
+  {
+    id: 'o21',
+    customerId: 'c21',
+    amount: 299.95,
+    status: OrderStatus.SHIPPED,
+    createdAt: '2024-09-21T08:00:00Z',
+    items: [
+      { id: 'oi44', productId: 'p1', quantity: 1, currentPrice: 299.99, totalPrice: 299.99 },
+      { id: 'oi45', productId: 'p6', quantity: 1, currentPrice: 19.99, totalPrice: 19.99 },
+      { id: 'oi46', productId: 'p9', quantity: 2, currentPrice: 29.99, totalPrice: 59.98 },
+    ],
+  },
+  {
+    id: 'o22',
+    customerId: 'c22',
+    amount: 139.97,
+    status: OrderStatus.PROCESSING,
+    createdAt: '2024-09-22T09:00:00Z',
+    items: [
+      { id: 'oi47', productId: 'p10', quantity: 3, currentPrice: 19.99, totalPrice: 59.97 },
+      { id: 'oi48', productId: 'p12', quantity: 1, currentPrice: 1.99, totalPrice: 1.99 },
+      { id: 'oi49', productId: 'p14', quantity: 1, currentPrice: 79.99, totalPrice: 79.99 },
+    ],
+  },
+  {
+    id: 'o23',
+    customerId: 'c23',
+    amount: 259.95,
+    status: OrderStatus.DELIVERED,
+    createdAt: '2024-09-23T10:00:00Z',
+    items: [
+      { id: 'oi50', productId: 'p4', quantity: 1, currentPrice: 89.99, totalPrice: 89.99 },
+      { id: 'oi51', productId: 'p5', quantity: 2, currentPrice: 39.99, totalPrice: 79.98 },
+      { id: 'oi52', productId: 'p16', quantity: 1, currentPrice: 129.99, totalPrice: 129.99 },
+    ],
+  },
+  {
+    id: 'o24',
+    customerId: 'c24',
+    amount: 329.96,
+    status: OrderStatus.CANCELED,
+    createdAt: '2024-09-24T11:00:00Z',
+    items: [
+      { id: 'oi53', productId: 'p2', quantity: 1, currentPrice: 999.99, totalPrice: 999.99 },
+      { id: 'oi54', productId: 'p7', quantity: 2, currentPrice: 24.99, totalPrice: 49.98 },
+    ],
+  },
+  {
+    id: 'o25',
+    customerId: 'c25',
+    amount: 55.97,
+    status: OrderStatus.RETURNED,
+    createdAt: '2024-09-25T12:00:00Z',
+    items: [
+      { id: 'oi55', productId: 'p6', quantity: 1, currentPrice: 19.99, totalPrice: 19.99 },
+      { id: 'oi56', productId: 'p8', quantity: 1, currentPrice: 15.99, totalPrice: 15.99 },
+      { id: 'oi57', productId: 'p13', quantity: 1, currentPrice: 14.99, totalPrice: 14.99 },
+    ],
+  },
+  {
+    id: 'o26',
+    customerId: 'c26',
+    amount: 69.97,
+    status: OrderStatus.SHIPPED,
+    createdAt: '2024-09-26T13:00:00Z',
+    items: [
+      { id: 'oi58', productId: 'p9', quantity: 1, currentPrice: 29.99, totalPrice: 29.99 },
+      { id: 'oi59', productId: 'p10', quantity: 2, currentPrice: 19.99, totalPrice: 39.98 },
+    ],
+  },
+  {
+    id: 'o27',
+    customerId: 'c27',
+    amount: 109.96,
+    status: OrderStatus.PENDING,
+    createdAt: '2024-09-27T14:00:00Z',
+    items: [
+      { id: 'oi60', productId: 'p2', quantity: 1, currentPrice: 999.99, totalPrice: 999.99 },
+      { id: 'oi61', productId: 'p6', quantity: 1, currentPrice: 19.99, totalPrice: 19.99 },
+    ],
+  },
+  {
+    id: 'o28',
+    customerId: 'c28',
+    amount: 89.97,
+    status: OrderStatus.PROCESSING,
+    createdAt: '2024-09-28T15:00:00Z',
+    items: [
+      { id: 'oi62', productId: 'p11', quantity: 3, currentPrice: 2.99, totalPrice: 8.97 },
+      { id: 'oi63', productId: 'p14', quantity: 1, currentPrice: 79.99, totalPrice: 79.99 },
+    ],
+  },
+  {
+    id: 'o29',
+    customerId: 'c29',
+    amount: 74.97,
+    status: OrderStatus.RETURNED,
+    createdAt: '2024-09-29T16:00:00Z',
+    items: [
+      { id: 'oi64', productId: 'p7', quantity: 1, currentPrice: 24.99, totalPrice: 24.99 },
+      { id: 'oi65', productId: 'p8', quantity: 1, currentPrice: 15.99, totalPrice: 15.99 },
+      { id: 'oi66', productId: 'p13', quantity: 1, currentPrice: 14.99, totalPrice: 14.99 },
+    ],
+  },
+  {
+    id: 'o30',
+    customerId: 'c30',
+    amount: 49.98,
+    status: OrderStatus.CANCELED,
+    createdAt: '2024-09-30T17:00:00Z',
+    items: [
+      { id: 'oi67', productId: 'p5', quantity: 1, currentPrice: 39.99, totalPrice: 39.99 },
+      { id: 'oi68', productId: 'p9', quantity: 1, currentPrice: 29.99, totalPrice: 29.99 },
+    ],
+  },
+  {
+    id: 'o31',
+    customerId: 'c31',
+    amount: 179.95,
+    status: OrderStatus.SHIPPED,
+    createdAt: '2024-10-01T18:00:00Z',
+    items: [
+      { id: 'oi69', productId: 'p1', quantity: 1, currentPrice: 299.99, totalPrice: 299.99 },
+      { id: 'oi70', productId: 'p5', quantity: 1, currentPrice: 39.99, totalPrice: 39.99 },
+      { id: 'oi71', productId: 'p12', quantity: 1, currentPrice: 1.99, totalPrice: 1.99 },
+    ],
+  },
+  {
+    id: 'o32',
+    customerId: 'c32',
+    amount: 55.98,
+    status: OrderStatus.PROCESSING,
+    createdAt: '2024-10-02T19:00:00Z',
+    items: [
+      { id: 'oi72', productId: 'p7', quantity: 1, currentPrice: 24.99, totalPrice: 24.99 },
+      { id: 'oi73', productId: 'p8', quantity: 2, currentPrice: 15.99, totalPrice: 31.98 },
+    ],
+  },
+  {
+    id: 'o33',
+    customerId: 'c33',
     amount: 99.95,
+    status: OrderStatus.RETURNED,
+    createdAt: '2024-10-03T20:00:00Z',
+    items: [
+      { id: 'oi74', productId: 'p2', quantity: 1, currentPrice: 999.99, totalPrice: 999.99 },
+      { id: 'oi75', productId: 'p11', quantity: 1, currentPrice: 2.99, totalPrice: 2.99 },
+    ],
+  },
+  {
+    id: 'o34',
+    customerId: 'c34',
+    amount: 139.97,
     status: OrderStatus.SHIPPED,
-    createdAt: '2023-08-10T10:00:00Z',
+    createdAt: '2024-10-04T21:00:00Z',
     items: [
-      {
-        id: 'item_10',
-        productId: 'prod_10',
-        quantity: 2,
-        currentPrice: 49.98,
-        totalPrice: 99.95
-      }
-    ]
+      { id: 'oi76', productId: 'p6', quantity: 1, currentPrice: 19.99, totalPrice: 19.99 },
+      { id: 'oi77', productId: 'p8', quantity: 1, currentPrice: 15.99, totalPrice: 15.99 },
+      { id: 'oi78', productId: 'p12', quantity: 1, currentPrice: 1.99, totalPrice: 1.99 },
+    ],
   },
   {
-    id: '11',
-    customerId: 'cust_11',
-    amount: 19.99,
-    status: OrderStatus.DELIVERED,
-    createdAt: '2023-08-11T14:00:00Z',
+    id: 'o35',
+    customerId: 'c35',
+    amount: 229.94,
+    status: OrderStatus.CANCELED,
+    createdAt: '2024-10-05T22:00:00Z',
     items: [
-      {
-        id: 'item_11',
-        productId: 'prod_11',
-        quantity: 1,
-        currentPrice: 19.99,
-        totalPrice: 19.99
-      }
-    ]
+      { id: 'oi79', productId: 'p4', quantity: 1, currentPrice: 89.99, totalPrice: 89.99 },
+      { id: 'oi80', productId: 'p10', quantity: 2, currentPrice: 19.99, totalPrice: 39.98 },
+      { id: 'oi81', productId: 'p12', quantity: 1, currentPrice: 1.99, totalPrice: 1.99 },
+    ],
   },
   {
-    id: '12',
-    customerId: 'cust_12',
+    id: 'o36',
+    customerId: 'c36',
+    amount: 69.96,
+    status: OrderStatus.RETURNED,
+    createdAt: '2024-10-06T23:00:00Z',
+    items: [
+      { id: 'oi82', productId: 'p5', quantity: 1, currentPrice: 39.99, totalPrice: 39.99 },
+      { id: 'oi83', productId: 'p8', quantity: 1, currentPrice: 15.99, totalPrice: 15.99 },
+      { id: 'oi84', productId: 'p13', quantity: 1, currentPrice: 14.99, totalPrice: 14.99 },
+    ],
+  },
+  {
+    id: 'o37',
+    customerId: 'c37',
+    amount: 209.97,
+    status: OrderStatus.SHIPPED,
+    createdAt: '2024-10-07T00:00:00Z',
+    items: [
+      { id: 'oi85', productId: 'p1', quantity: 1, currentPrice: 299.99, totalPrice: 299.99 },
+      { id: 'oi86', productId: 'p7', quantity: 1, currentPrice: 24.99, totalPrice: 24.99 },
+      { id: 'oi87', productId: 'p9', quantity: 1, currentPrice: 29.99, totalPrice: 29.99 },
+    ],
+  },
+  {
+    id: 'o38',
+    customerId: 'c38',
+    amount: 49.98,
+    status: OrderStatus.PROCESSING,
+    createdAt: '2024-10-08T01:00:00Z',
+    items: [
+      { id: 'oi88', productId: 'p8', quantity: 1, currentPrice: 15.99, totalPrice: 15.99 },
+      { id: 'oi89', productId: 'p10', quantity: 2, currentPrice: 19.99, totalPrice: 39.98 },
+    ],
+  },
+  {
+    id: 'o39',
+    customerId: 'c39',
+    amount: 169.96,
+    status: OrderStatus.PENDING,
+    createdAt: '2024-10-09T02:00:00Z',
+    items: [
+      { id: 'oi90', productId: 'p2', quantity: 1, currentPrice: 999.99, totalPrice: 999.99 },
+      { id: 'oi91', productId: 'p6', quantity: 1, currentPrice: 19.99, totalPrice: 19.99 },
+      { id: 'oi92', productId: 'p11', quantity: 1, currentPrice: 2.99, totalPrice: 2.99 },
+    ],
+  },
+  {
+    id: 'o40',
+    customerId: 'c40',
+    amount: 119.98,
+    status: OrderStatus.RETURNED,
+    createdAt: '2024-10-10T03:00:00Z',
+    items: [
+      { id: 'oi93', productId: 'p7', quantity: 1, currentPrice: 24.99, totalPrice: 24.99 },
+      { id: 'oi94', productId: 'p9', quantity: 1, currentPrice: 29.99, totalPrice: 29.99 },
+      { id: 'oi95', productId: 'p12', quantity: 1, currentPrice: 1.99, totalPrice: 1.99 },
+    ],
+  },
+  {
+    id: 'o41',
+    customerId: 'c41',
+    amount: 89.97,
+    status: OrderStatus.SHIPPED,
+    createdAt: '2024-10-11T04:00:00Z',
+    items: [
+      { id: 'oi96', productId: 'p9', quantity: 1, currentPrice: 29.99, totalPrice: 29.99 },
+      { id: 'oi97', productId: 'p10', quantity: 2, currentPrice: 19.99, totalPrice: 39.98 },
+    ],
+  },
+  {
+    id: 'o42',
+    customerId: 'c42',
+    amount: 179.97,
+    status: OrderStatus.CANCELED,
+    createdAt: '2024-10-12T05:00:00Z',
+    items: [
+      { id: 'oi98', productId: 'p2', quantity: 1, currentPrice: 999.99, totalPrice: 999.99 },
+      { id: 'oi99', productId: 'p12', quantity: 1, currentPrice: 1.99, totalPrice: 1.99 },
+    ],
+  },
+  {
+    id: 'o43',
+    customerId: 'c43',
     amount: 49.99,
-    status: OrderStatus.CANCELED,
-    createdAt: '2023-08-12T12:45:00Z',
-    items: [
-      {
-        id: 'item_12',
-        productId: 'prod_12',
-        quantity: 1,
-        currentPrice: 49.99,
-        totalPrice: 49.99
-      }
-    ]
-  },
-  {
-    id: '13',
-    customerId: 'cust_13',
-    amount: 239.50,
-    status: OrderStatus.RETURNED,
-    createdAt: '2023-08-13T16:30:00Z',
-    items: [
-      {
-        id: 'item_13',
-        productId: 'prod_13',
-        quantity: 2,
-        currentPrice: 119.75,
-        totalPrice: 239.50
-      }
-    ]
-  },
-  {
-    id: '14',
-    customerId: 'cust_14',
-    amount: 120.00,
-    status: OrderStatus.REFUNDED,
-    createdAt: '2023-08-14T13:30:00Z',
-    items: [
-      {
-        id: 'item_14',
-        productId: 'prod_14',
-        quantity: 3,
-        currentPrice: 40.00,
-        totalPrice: 120.00
-      }
-    ]
-  },
-  {
-    id: '15',
-    customerId: 'cust_15',
-    amount: 89.50,
-    status: OrderStatus.PENDING,
-    createdAt: '2023-08-15T09:00:00Z',
-    items: [
-      {
-        id: 'item_15',
-        productId: 'prod_15',
-        quantity: 2,
-        currentPrice: 44.75,
-        totalPrice: 89.50
-      }
-    ]
-  },
-  {
-    id: '16',
-    customerId: 'cust_16',
-    amount: 130.00,
     status: OrderStatus.PROCESSING,
-    createdAt: '2023-08-16T11:15:00Z',
+    createdAt: '2024-10-13T06:00:00Z',
     items: [
-      {
-        id: 'item_16',
-        productId: 'prod_16',
-        quantity: 3,
-        currentPrice: 43.33,
-        totalPrice: 130.00
-      }
-    ]
+      { id: 'oi100', productId: 'p5', quantity: 1, currentPrice: 39.99, totalPrice: 39.99 },
+      { id: 'oi101', productId: 'p6', quantity: 1, currentPrice: 19.99, totalPrice: 19.99 },
+    ],
   },
   {
-    id: '17',
-    customerId: 'cust_17',
-    amount: 220.75,
+    id: 'o44',
+    customerId: 'c44',
+    amount: 299.97,
     status: OrderStatus.SHIPPED,
-    createdAt: '2023-08-17T14:00:00Z',
+    createdAt: '2024-10-14T07:00:00Z',
     items: [
-      {
-        id: 'item_17',
-        productId: 'prod_17',
-        quantity: 2,
-        currentPrice: 110.38,
-        totalPrice: 220.75
-      }
-    ]
+      { id: 'oi102', productId: 'p1', quantity: 1, currentPrice: 299.99, totalPrice: 299.99 },
+      { id: 'oi103', productId: 'p7', quantity: 1, currentPrice: 24.99, totalPrice: 24.99 },
+    ],
   },
   {
-    id: '18',
-    customerId: 'cust_18',
-    amount: 75.00,
-    status: OrderStatus.DELIVERED,
-    createdAt: '2023-08-18T16:30:00Z',
-    items: [
-      {
-        id: 'item_18',
-        productId: 'prod_18',
-        quantity: 1,
-        currentPrice: 75.00,
-        totalPrice: 75.00
-      }
-    ]
-  },
-  {
-    id: '19',
-    customerId: 'cust_19',
-    amount: 95.25,
-    status: OrderStatus.CANCELED,
-    createdAt: '2023-08-19T12:15:00Z',
-    items: [
-      {
-        id: 'item_19',
-        productId: 'prod_19',
-        quantity: 3,
-        currentPrice: 31.75,
-        totalPrice: 95.25
-      }
-    ]
-  },
-  {
-    id: '20',
-    customerId: 'cust_20',
-    amount: 159.99,
+    id: 'o45',
+    customerId: 'c45',
+    amount: 99.97,
     status: OrderStatus.RETURNED,
-    createdAt: '2023-08-20T10:00:00Z',
+    createdAt: '2024-10-15T08:00:00Z',
     items: [
-      {
-        id: 'item_20',
-        productId: 'prod_20',
-        quantity: 1,
-        currentPrice: 159.99,
-        totalPrice: 159.99
-      }
-    ]
+      { id: 'oi104', productId: 'p2', quantity: 1, currentPrice: 999.99, totalPrice: 999.99 },
+      { id: 'oi105', productId: 'p6', quantity: 1, currentPrice: 19.99, totalPrice: 19.99 },
+    ],
   },
   {
-    id: '21',
-    customerId: 'cust_21',
-    amount: 210.00,
-    status: OrderStatus.REFUNDED,
-    createdAt: '2023-08-21T15:00:00Z',
-    items: [
-      {
-        id: 'item_21',
-        productId: 'prod_21',
-        quantity: 2,
-        currentPrice: 105.00,
-        totalPrice: 210.00
-      }
-    ]
-  },
-  {
-    id: '22',
-    customerId: 'cust_22',
-    amount: 53.49,
-    status: OrderStatus.PENDING,
-    createdAt: '2023-08-22T13:45:00Z',
-    items: [
-      {
-        id: 'item_22',
-        productId: 'prod_22',
-        quantity: 1,
-        currentPrice: 53.49,
-        totalPrice: 53.49
-      }
-    ]
-  },
-  {
-    id: '23',
-    customerId: 'cust_23',
-    amount: 125.50,
-    status: OrderStatus.PROCESSING,
-    createdAt: '2023-08-23T16:00:00Z',
-    items: [
-      {
-        id: 'item_23',
-        productId: 'prod_23',
-        quantity: 2,
-        currentPrice: 62.75,
-        totalPrice: 125.50
-      }
-    ]
-  },
-  {
-    id: '24',
-    customerId: 'cust_24',
-    amount: 40.00,
-    status: OrderStatus.SHIPPED,
-    createdAt: '2023-08-24T09:30:00Z',
-    items: [
-      {
-        id: 'item_24',
-        productId: 'prod_24',
-        quantity: 2,
-        currentPrice: 20.00,
-        totalPrice: 40.00
-      }
-    ]
-  },
-  {
-    id: '25',
-    customerId: 'cust_25',
-    amount: 95.99,
-    status: OrderStatus.DELIVERED,
-    createdAt: '2023-08-25T11:20:00Z',
-    items: [
-      {
-        id: 'item_25',
-        productId: 'prod_25',
-        quantity: 1,
-        currentPrice: 95.99,
-        totalPrice: 95.99
-      }
-    ]
-  },
-  {
-    id: '26',
-    customerId: 'cust_26',
-    amount: 179.75,
+    id: 'o46',
+    customerId: 'c46',
+    amount: 119.97,
     status: OrderStatus.CANCELED,
-    createdAt: '2023-08-26T13:30:00Z',
+    createdAt: '2024-10-16T09:00:00Z',
     items: [
-      {
-        id: 'item_26',
-        productId: 'prod_26',
-        quantity: 2,
-        currentPrice: 89.87,
-        totalPrice: 179.75
-      }
-    ]
+      { id: 'oi106', productId: 'p4', quantity: 1, currentPrice: 89.99, totalPrice: 89.99 },
+      { id: 'oi107', productId: 'p7', quantity: 1, currentPrice: 24.99, totalPrice: 24.99 },
+      { id: 'oi108', productId: 'p12', quantity: 1, currentPrice: 1.99, totalPrice: 1.99 },
+    ],
   },
   {
-    id: '27',
-    customerId: 'cust_27',
-    amount: 65.00,
-    status: OrderStatus.RETURNED,
-    createdAt: '2023-08-27T15:00:00Z',
-    items: [
-      {
-        id: 'item_27',
-        productId: 'prod_27',
-        quantity: 1,
-        currentPrice: 65.00,
-        totalPrice: 65.00
-      }
-    ]
-  },
-  {
-    id: '28',
-    customerId: 'cust_28',
-    amount: 142.00,
-    status: OrderStatus.REFUNDED,
-    createdAt: '2023-08-28T12:30:00Z',
-    items: [
-      {
-        id: 'item_28',
-        productId: 'prod_28',
-        quantity: 4,
-        currentPrice: 35.50,
-        totalPrice: 142.00
-      }
-    ]
-  },
-  {
-    id: '29',
-    customerId: 'cust_29',
-    amount: 88.88,
-    status: OrderStatus.PENDING,
-    createdAt: '2023-08-29T14:00:00Z',
-    items: [
-      {
-        id: 'item_29',
-        productId: 'prod_29',
-        quantity: 1,
-        currentPrice: 88.88,
-        totalPrice: 88.88
-      }
-    ]
-  },
-  {
-    id: '30',
-    customerId: 'cust_30',
-    amount: 199.99,
+    id: 'o47',
+    customerId: 'c47',
+    amount: 69.96,
     status: OrderStatus.PROCESSING,
-    createdAt: '2023-08-30T16:15:00Z',
+    createdAt: '2024-10-17T10:00:00Z',
     items: [
-      {
-        id: 'item_30',
-        productId: 'prod_30',
-        quantity: 1,
-        currentPrice: 199.99,
-        totalPrice: 199.99
-      }
-    ]
+      { id: 'oi109', productId: 'p7', quantity: 1, currentPrice: 24.99, totalPrice: 24.99 },
+      { id: 'oi110', productId: 'p8', quantity: 2, currentPrice: 15.99, totalPrice: 31.98 },
+    ],
   },
   {
-    id: '31',
-    customerId: 'cust_31',
-    amount: 57.50,
+    id: 'o48',
+    customerId: 'c48',
+    amount: 239.97,
     status: OrderStatus.SHIPPED,
-    createdAt: '2023-08-31T09:30:00Z',
+    createdAt: '2024-10-18T11:00:00Z',
     items: [
-      {
-        id: 'item_31',
-        productId: 'prod_31',
-        quantity: 2,
-        currentPrice: 28.75,
-        totalPrice: 57.50
-      }
-    ]
+      { id: 'oi111', productId: 'p2', quantity: 1, currentPrice: 999.99, totalPrice: 999.99 },
+      { id: 'oi112', productId: 'p6', quantity: 1, currentPrice: 19.99, totalPrice: 19.99 },
+      { id: 'oi113', productId: 'p7', quantity: 1, currentPrice: 24.99, totalPrice: 24.99 },
+    ],
   },
   {
-    id: '32',
-    customerId: 'cust_32',
-    amount: 82.00,
-    status: OrderStatus.DELIVERED,
-    createdAt: '2023-09-01T11:00:00Z',
+    id: 'o49',
+    customerId: 'c49',
+    amount: 99.95,
+    status: OrderStatus.RETURNED,
+    createdAt: '2024-10-19T12:00:00Z',
     items: [
-      {
-        id: 'item_32',
-        productId: 'prod_32',
-        quantity: 1,
-        currentPrice: 82.00,
-        totalPrice: 82.00
-      }
-    ]
+      { id: 'oi114', productId: 'p8', quantity: 1, currentPrice: 15.99, totalPrice: 15.99 },
+      { id: 'oi115', productId: 'p10', quantity: 2, currentPrice: 19.99, totalPrice: 39.98 },
+    ],
   },
   {
-    id: '33',
-    customerId: 'cust_33',
-    amount: 120.50,
+    id: 'o50',
+    customerId: 'c50',
+    amount: 179.97,
+    status: OrderStatus.PROCESSING,
+    createdAt: '2024-10-20T13:00:00Z',
+    items: [
+      { id: 'oi116', productId: 'p1', quantity: 1, currentPrice: 299.99, totalPrice: 299.99 },
+      { id: 'oi117', productId: 'p6', quantity: 1, currentPrice: 19.99, totalPrice: 19.99 },
+      { id: 'oi118', productId: 'p12', quantity: 1, currentPrice: 1.99, totalPrice: 1.99 },
+    ],
+  },
+  {
+    id: 'o51',
+    customerId: 'c51',
+    amount: 89.97,
     status: OrderStatus.CANCELED,
-    createdAt: '2023-09-02T13:15:00Z',
+    createdAt: '2024-10-21T14:00:00Z',
     items: [
-      {
-        id: 'item_33',
-        productId: 'prod_33',
-        quantity: 3,
-        currentPrice: 40.17,
-        totalPrice: 120.50
-      }
-    ]
+      { id: 'oi119', productId: 'p4', quantity: 1, currentPrice: 89.99, totalPrice: 89.99 },
+      { id: 'oi120', productId: 'p10', quantity: 1, currentPrice: 19.99, totalPrice: 19.99 },
+    ],
   },
   {
-    id: '34',
-    customerId: 'cust_34',
-    amount: 73.75,
-    status: OrderStatus.RETURNED,
-    createdAt: '2023-09-03T14:30:00Z',
-    items: [
-      {
-        id: 'item_34',
-        productId: 'prod_34',
-        quantity: 1,
-        currentPrice: 73.75,
-        totalPrice: 73.75
-      }
-    ]
-  },
-  {
-    id: '35',
-    customerId: 'cust_35',
-    amount: 155.00,
-    status: OrderStatus.REFUNDED,
-    createdAt: '2023-09-04T10:00:00Z',
-    items: [
-      {
-        id: 'item_35',
-        productId: 'prod_35',
-        quantity: 5,
-        currentPrice: 31.00,
-        totalPrice: 155.00
-      }
-    ]
-  },
-  {
-    id: '36',
-    customerId: 'cust_36',
-    amount: 95.95,
-    status: OrderStatus.PENDING,
-    createdAt: '2023-09-05T12:00:00Z',
-    items: [
-      {
-        id: 'item_36',
-        productId: 'prod_36',
-        quantity: 1,
-        currentPrice: 95.95,
-        totalPrice: 95.95
-      }
-    ]
-  },
-  {
-    id: '37',
-    customerId: 'cust_37',
-    amount: 188.00,
-    status: OrderStatus.PROCESSING,
-    createdAt: '2023-09-06T14:45:00Z',
-    items: [
-      {
-        id: 'item_37',
-        productId: 'prod_37',
-        quantity: 2,
-        currentPrice: 94.00,
-        totalPrice: 188.00
-      }
-    ]
-  },
-  {
-    id: '38',
-    customerId: 'cust_38',
-    amount: 29.99,
+    id: 'o52',
+    customerId: 'c52',
+    amount: 139.97,
     status: OrderStatus.SHIPPED,
-    createdAt: '2023-09-07T16:30:00Z',
+    createdAt: '2024-10-22T15:00:00Z',
     items: [
-      {
-        id: 'item_38',
-        productId: 'prod_38',
-        quantity: 1,
-        currentPrice: 29.99,
-        totalPrice: 29.99
-      }
-    ]
+      { id: 'oi121', productId: 'p2', quantity: 1, currentPrice: 999.99, totalPrice: 999.99 },
+      { id: 'oi122', productId: 'p5', quantity: 1, currentPrice: 39.99, totalPrice: 39.99 },
+      { id: 'oi123', productId: 'p12', quantity: 1, currentPrice: 1.99, totalPrice: 1.99 },
+    ],
   },
   {
-    id: '39',
-    customerId: 'cust_39',
-    amount: 78.50,
-    status: OrderStatus.DELIVERED,
-    createdAt: '2023-09-08T11:00:00Z',
+    id: 'o53',
+    customerId: 'c53',
+    amount: 219.97,
+    status: OrderStatus.RETURNED,
+    createdAt: '2024-10-23T16:00:00Z',
     items: [
-      {
-        id: 'item_39',
-        productId: 'prod_39',
-        quantity: 2,
-        currentPrice: 39.25,
-        totalPrice: 78.50
-      }
-    ]
+      { id: 'oi124', productId: 'p1', quantity: 1, currentPrice: 299.99, totalPrice: 299.99 },
+      { id: 'oi125', productId: 'p5', quantity: 1, currentPrice: 39.99, totalPrice: 39.99 },
+    ],
   },
   {
-    id: '40',
-    customerId: 'cust_40',
-    amount: 67.99,
+    id: 'o54',
+    customerId: 'c54',
+    amount: 109.97,
+    status: OrderStatus.SHIPPED,
+    createdAt: '2024-10-24T17:00:00Z',
+    items: [
+      { id: 'oi126', productId: 'p2', quantity: 1, currentPrice: 999.99, totalPrice: 999.99 },
+      { id: 'oi127', productId: 'p6', quantity: 1, currentPrice: 19.99, totalPrice: 19.99 },
+      { id: 'oi128', productId: 'p8', quantity: 1, currentPrice: 15.99, totalPrice: 15.99 },
+    ],
+  },
+  {
+    id: 'o55',
+    customerId: 'c55',
+    amount: 89.97,
+    status: OrderStatus.PENDING,
+    createdAt: '2024-10-25T18:00:00Z',
+    items: [
+      { id: 'oi129', productId: 'p6', quantity: 1, currentPrice: 19.99, totalPrice: 19.99 },
+      { id: 'oi130', productId: 'p8', quantity: 1, currentPrice: 15.99, totalPrice: 15.99 },
+      { id: 'oi131', productId: 'p12', quantity: 1, currentPrice: 1.99, totalPrice: 1.99 },
+    ],
+  },
+  {
+    id: 'o56',
+    customerId: 'c56',
+    amount: 109.97,
     status: OrderStatus.CANCELED,
-    createdAt: '2023-09-09T12:30:00Z',
+    createdAt: '2024-10-26T19:00:00Z',
     items: [
-      {
-        id: 'item_40',
-        productId: 'prod_40',
-        quantity: 1,
-        currentPrice: 67.99,
-        totalPrice: 67.99
-      }
-    ]
+      { id: 'oi132', productId: 'p4', quantity: 1, currentPrice: 89.99, totalPrice: 89.99 },
+      { id: 'oi133', productId: 'p6', quantity: 1, currentPrice: 19.99, totalPrice: 19.99 },
+    ],
   },
   {
-    id: '41',
-    customerId: 'cust_41',
-    amount: 182.00,
+    id: 'o57',
+    customerId: 'c57',
+    amount: 229.95,
     status: OrderStatus.RETURNED,
-    createdAt: '2023-09-10T15:00:00Z',
+    createdAt: '2024-10-27T20:00:00Z',
     items: [
-      {
-        id: 'item_41',
-        productId: 'prod_41',
-        quantity: 2,
-        currentPrice: 91.00,
-        totalPrice: 182.00
-      }
-    ]
+      { id: 'oi134', productId: 'p2', quantity: 1, currentPrice: 999.99, totalPrice: 999.99 },
+      { id: 'oi135', productId: 'p5', quantity: 1, currentPrice: 39.99, totalPrice: 39.99 },
+      { id: 'oi136', productId: 'p6', quantity: 1, currentPrice: 19.99, totalPrice: 19.99 },
+    ],
   },
   {
-    id: '42',
-    customerId: 'cust_42',
-    amount: 130.50,
-    status: OrderStatus.REFUNDED,
-    createdAt: '2023-09-11T13:00:00Z',
-    items: [
-      {
-        id: 'item_42',
-        productId: 'prod_42',
-        quantity: 2,
-        currentPrice: 65.25,
-        totalPrice: 130.50
-      }
-    ]
-  },
-  {
-    id: '43',
-    customerId: 'cust_43',
-    amount: 91.00,
-    status: OrderStatus.PENDING,
-    createdAt: '2023-09-12T14:30:00Z',
-    items: [
-      {
-        id: 'item_43',
-        productId: 'prod_43',
-        quantity: 1,
-        currentPrice: 91.00,
-        totalPrice: 91.00
-      }
-    ]
-  },
-  {
-    id: '44',
-    customerId: 'cust_44',
-    amount: 142.50,
-    status: OrderStatus.PROCESSING,
-    createdAt: '2023-09-13T16:00:00Z',
-    items: [
-      {
-        id: 'item_44',
-        productId: 'prod_44',
-        quantity: 3,
-        currentPrice: 47.50,
-        totalPrice: 142.50
-      }
-    ]
-  },
-  {
-    id: '45',
-    customerId: 'cust_45',
-    amount: 55.75,
+    id: 'o58',
+    customerId: 'c58',
+    amount: 119.97,
     status: OrderStatus.SHIPPED,
-    createdAt: '2023-09-14T09:30:00Z',
+    createdAt: '2024-10-28T21:00:00Z',
     items: [
-      {
-        id: 'item_45',
-        productId: 'prod_45',
-        quantity: 1,
-        currentPrice: 55.75,
-        totalPrice: 55.75
-      }
-    ]
+      { id: 'oi137', productId: 'p2', quantity: 1, currentPrice: 999.99, totalPrice: 999.99 },
+      { id: 'oi138', productId: 'p8', quantity: 1, currentPrice: 15.99, totalPrice: 15.99 },
+    ],
   },
   {
-    id: '46',
-    customerId: 'cust_46',
-    amount: 68.99,
-    status: OrderStatus.DELIVERED,
-    createdAt: '2023-09-15T11:15:00Z',
-    items: [
-      {
-        id: 'item_46',
-        productId: 'prod_46',
-        quantity: 2,
-        currentPrice: 34.50,
-        totalPrice: 68.99
-      }
-    ]
-  },
-  {
-    id: '47',
-    customerId: 'cust_47',
-    amount: 102.00,
-    status: OrderStatus.CANCELED,
-    createdAt: '2023-09-16T12:00:00Z',
-    items: [
-      {
-        id: 'item_47',
-        productId: 'prod_47',
-        quantity: 1,
-        currentPrice: 102.00,
-        totalPrice: 102.00
-      }
-    ]
-  },
-  {
-    id: '48',
-    customerId: 'cust_48',
-    amount: 45.50,
-    status: OrderStatus.RETURNED,
-    createdAt: '2023-09-17T13:30:00Z',
-    items: [
-      {
-        id: 'item_48',
-        productId: 'prod_48',
-        quantity: 1,
-        currentPrice: 45.50,
-        totalPrice: 45.50
-      }
-    ]
-  },
-  {
-    id: '49',
-    customerId: 'cust_49',
-    amount: 234.75,
-    status: OrderStatus.REFUNDED,
-    createdAt: '2023-09-18T14:45:00Z',
-    items: [
-      {
-        id: 'item_49',
-        productId: 'prod_49',
-        quantity: 3,
-        currentPrice: 78.25,
-        totalPrice: 234.75
-      }
-    ]
-  },
-  {
-    id: '50',
-    customerId: 'cust_50',
-    amount: 88.00,
+    id: 'o59',
+    customerId: 'c59',
+    amount: 79.97,
     status: OrderStatus.PENDING,
-    createdAt: '2023-09-19T16:00:00Z',
+    createdAt: '2024-10-29T22:00:00Z',
     items: [
-      {
-        id: 'item_50',
-        productId: 'prod_50',
-        quantity: 1,
-        currentPrice: 88.00,
-        totalPrice: 88.00
-      }
-    ]
+      { id: 'oi139', productId: 'p7', quantity: 1, currentPrice: 24.99, totalPrice: 24.99 },
+      { id: 'oi140', productId: 'p10', quantity: 2, currentPrice: 19.99, totalPrice: 39.98 },
+    ],
   },
   {
-    id: '51',
-    customerId: 'cust_51',
-    amount: 132.00,
+    id: 'o60',
+    customerId: 'c60',
+    amount: 149.96,
     status: OrderStatus.PROCESSING,
-    createdAt: '2023-09-20T10:30:00Z',
+    createdAt: '2024-10-30T23:00:00Z',
     items: [
-      {
-        id: 'item_51',
-        productId: 'prod_51',
-        quantity: 2,
-        currentPrice: 66.00,
-        totalPrice: 132.00
-      }
-    ]
+      { id: 'oi141', productId: 'p1', quantity: 1, currentPrice: 299.99, totalPrice: 299.99 },
+      { id: 'oi142', productId: 'p8', quantity: 1, currentPrice: 15.99, totalPrice: 15.99 },
+      { id: 'oi143', productId: 'p12', quantity: 1, currentPrice: 1.99, totalPrice: 1.99 },
+    ],
   },
-  {
-    id: '52',
-    customerId: 'cust_52',
-    amount: 40.75,
-    status: OrderStatus.SHIPPED,
-    createdAt: '2023-09-21T12:00:00Z',
-    items: [
-      {
-        id: 'item_52',
-        productId: 'prod_52',
-        quantity: 1,
-        currentPrice: 40.75,
-        totalPrice: 40.75
-      }
-    ]
-  },
-  {
-    id: '53',
-    customerId: 'cust_53',
-    amount: 159.99,
-    status: OrderStatus.DELIVERED,
-    createdAt: '2023-09-22T14:15:00Z',
-    items: [
-      {
-        id: 'item_53',
-        productId: 'prod_53',
-        quantity: 1,
-        currentPrice: 159.99,
-        totalPrice: 159.99
-      }
-    ]
-  },
-  {
-    id: '54',
-    customerId: 'cust_54',
-    amount: 125.00,
-    status: OrderStatus.CANCELED,
-    createdAt: '2023-09-23T15:30:00Z',
-    items: [
-      {
-        id: 'item_54',
-        productId: 'prod_54',
-        quantity: 2,
-        currentPrice: 62.50,
-        totalPrice: 125.00
-      }
-    ]
-  },
-  {
-    id: '55',
-    customerId: 'cust_55',
-    amount: 95.00,
-    status: OrderStatus.RETURNED,
-    createdAt: '2023-09-24T13:00:00Z',
-    items: [
-      {
-        id: 'item_55',
-        productId: 'prod_55',
-        quantity: 1,
-        currentPrice: 95.00,
-        totalPrice: 95.00
-      }
-    ]
-  },
-  {
-    id: '56',
-    customerId: 'cust_56',
-    amount: 72.25,
-    status: OrderStatus.REFUNDED,
-    createdAt: '2023-09-25T10:00:00Z',
-    items: [
-      {
-        id: 'item_56',
-        productId: 'prod_56',
-        quantity: 2,
-        currentPrice: 36.12,
-        totalPrice: 72.25
-      }
-    ]
-  },
-  {
-    id: '57',
-    customerId: 'cust_57',
-    amount: 147.00,
-    status: OrderStatus.PENDING,
-    createdAt: '2023-09-26T11:30:00Z',
-    items: [
-      {
-        id: 'item_57',
-        productId: 'prod_57',
-        quantity: 3,
-        currentPrice: 49.00,
-        totalPrice: 147.00
-      }
-    ]
-  },
-  {
-    id: '58',
-    customerId: 'cust_58',
-    amount: 81.75,
-    status: OrderStatus.PROCESSING,
-    createdAt: '2023-09-27T13:00:00Z',
-    items: [
-      {
-        id: 'item_58',
-        productId: 'prod_58',
-        quantity: 2,
-        currentPrice: 40.88,
-        totalPrice: 81.75
-      }
-    ]
-  },
-  {
-    id: '59',
-    customerId: 'cust_59',
-    amount: 29.99,
-    status: OrderStatus.SHIPPED,
-    createdAt: '2023-09-28T14:00:00Z',
-    items: [
-      {
-        id: 'item_59',
-        productId: 'prod_59',
-        quantity: 1,
-        currentPrice: 29.99,
-        totalPrice: 29.99
-      }
-    ]
-  },
-  {
-    id: '60',
-    customerId: 'cust_60',
-    amount: 159.00,
-    status: OrderStatus.DELIVERED,
-    createdAt: '2023-09-29T15:00:00Z',
-    items: [
-      {
-        id: 'item_60',
-        productId: 'prod_60',
-        quantity: 1,
-        currentPrice: 159.00,
-        totalPrice: 159.00
-      }
-    ]
-  }
 ];
