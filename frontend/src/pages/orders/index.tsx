@@ -12,10 +12,7 @@ export const Orders = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const filterByStatus = searchParams.get('status')?.split(',') || [];
-  const filterByProducts = searchParams.getAll('products');
   const filterByDate = searchParams.get('filterByDate');
-
-  console.log(filterByStatus)
 
   const {
     data,
@@ -27,11 +24,10 @@ export const Orders = () => {
     pageNumber: 1,
     pageSize: 15,
     filterByStatus:  mapStringsToEnumValues(OrderStatus, filterByStatus),
-    // filterByProducts: ['prod_1', 'prod_8'],
     filterByDate: filterByDate ? filterByDate : undefined
   });
 
-  if (isError) return <p>Erro ao carregar dados!</p>;
+  if (isError) return <p>Error while loading data!</p>;
 
   const orders = data?.pages.flatMap(page => page.orders) || [];
   return (
@@ -43,7 +39,7 @@ export const Orders = () => {
           <Spinner />
         )}
       </h1>
-      <OrderTableFilters filters={{ filterByDate, filterByProducts, filterByStatus }} setSearchParams={setSearchParams} />
+      <OrderTableFilters filters={{ filterByDate, filterByStatus }} setSearchParams={setSearchParams} />
       <OrdersTable meta={{ fetchNextPage, hasNextPage, isLoadingOrders: hasLoadingState }} orders={orders} />
     </Fragment>
   )

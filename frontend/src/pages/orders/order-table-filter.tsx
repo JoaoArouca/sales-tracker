@@ -4,11 +4,12 @@ import { DatePicker } from "@/components/date-picker";
 import { MultiSelect } from "@/components/multi-select";
 import { generateSelectOptions } from "@/utils/generate-options";
 import { OrderStatus } from "@/api/list-orders";
+import { Button } from "@/components/ui/button";
+import { Search } from "lucide-react";
 
 
 export interface TFilterParams {
   filterByStatus: string[];
-  filterByProducts: string[];
   filterByDate: string | null;
 }
 
@@ -25,14 +26,12 @@ export const OrderTableFilters = ({
   const { handleSubmit, control } = useForm<TFilterParams>({
     defaultValues: {
       filterByDate: filters.filterByDate ?? "",
-      filterByProducts: filters.filterByProducts.length > 0 ? filters.filterByProducts : [],
       filterByStatus: filters.filterByStatus.length > 0 ? filters.filterByStatus : []
     }
   })
 
   const handlerFilters = (data: TFilterParams) => {
     const statuses = data.filterByStatus;
-    const products = data.filterByProducts;
     const date = data.filterByDate;
 
     setSearchParams((prev) => {
@@ -47,13 +46,6 @@ export const OrderTableFilters = ({
       } else {
         prev.delete('status');
       }
-
-      if (products.length > 0) {
-        prev.set('products', products.toString());
-      } else {
-        prev.delete('products')
-      }
-
       return prev;
     })
   }
@@ -83,10 +75,14 @@ export const OrderTableFilters = ({
             options={statusOptions}
             selected={field.value}
             setSelected={field.onChange}
+            className="w-[300px] mt-2"
           />
         )}
       />
-      <button type="submit">Filter</button>
+      <Button type="submit" variant="default" size="default">
+        <Search className="mr-2 h-4 w-4" />
+        Apply filters
+      </Button>
     </form>
   )
 }

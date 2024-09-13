@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/command";
 import { Command as CommandPrimitive } from "cmdk";
 import { X } from "lucide-react";
+import { twMerge } from "tailwind-merge";
 
 export interface ISelectOption {
   value: string;
@@ -16,10 +17,11 @@ export interface ISelectOption {
 interface MultiSelectProps {
   options: ISelectOption[];
   selected: string[];
-  setSelected: (...event: any[]) => void
+  setSelected: (...event: any[]) => void;
+  className?: string;
 }
 
-export const MultiSelect = ({ options, selected, setSelected }: MultiSelectProps) => {
+export const MultiSelect = ({ options, selected, setSelected, className }: MultiSelectProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [inputValue, setInputValue] = useState("");
@@ -57,7 +59,7 @@ export const MultiSelect = ({ options, selected, setSelected }: MultiSelectProps
   return (
     <Command
       onKeyDown={handleKeyDown}
-      className="overflow-visible"
+      className={twMerge(`overflow-visible ${className}`)}
     >
       <div className="group rounded-md border border-input px-3 py-2 text-sm ring-gray-200 ring-offset-background focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2">
         <div className="flex flex-wrap gap-1">
