@@ -24,10 +24,10 @@ export const MultiSelect = ({ options, selected, setSelected }: MultiSelectProps
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [inputValue, setInputValue] = useState("");
 
-  const handleUnselect = useCallback((optionToRemove: string) => {
+  const handleUnselect = (optionToRemove: string) => {
     const updatedOptions = selected.filter((option) => option !== optionToRemove)
     setSelected(updatedOptions);
-  }, []);
+  };
 
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLDivElement>) => {
