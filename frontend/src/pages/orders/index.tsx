@@ -3,9 +3,16 @@ import { useInfiniteOrders } from "@/hooks/useInfiniteOrders"
 import { Helmet } from "react-helmet-async";
 import { Fragment } from "react/jsx-runtime";
 import { OrdersTable } from "./orders-table";
-import { OrderStatus } from "@/api/list-orders";
+import { useSearchParams } from "react-router-dom";
+import { OrderTableFilters } from "./order-table-filter";
 
 export const Orders = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const filterByStatus = searchParams.getAll('status');
+  const filterByProducts = searchParams.getAll('products');
+  const filterByDate = searchParams.get('filterByDate');
+
   const {
     data,
     fetchNextPage,
@@ -17,7 +24,7 @@ export const Orders = () => {
     pageSize: 15,
     // filterByStatus: [OrderStatus.PENDING],
     // filterByProducts: ['prod_1', 'prod_8'],
-    // filterByDate: '2023-08-01T10:15:00Z'
+    filterByDate: filterByDate ? filterByDate : undefined
   });
 
   if (isError) return <p>Erro ao carregar dados!</p>;
@@ -32,6 +39,7 @@ export const Orders = () => {
           <Spinner />
         )}
       </h1>
+      <OrderTableFilters filters={{ filterByDate, filterByProducts, filterByStatus }} setSearchParams={setSearchParams} />
       <OrdersTable meta={{ fetchNextPage, hasNextPage, isLoadingOrders: hasLoadingState }} orders={orders} />
     </Fragment>
   )

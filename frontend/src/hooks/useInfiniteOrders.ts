@@ -5,10 +5,10 @@ export const useInfiniteOrders = ({
   pageSize = 5,
   filterByStatus = [],
   filterByProducts = [],
-  filterByDate = undefined
+  filterByDate = undefined,
  }: ListOrdersRequest) => {
   return useInfiniteQuery(
-    'listOrders',
+    ['listOrders', filterByDate],
     ({ pageParam = 1 }) => listOrders({
       pageNumber: pageParam,
       pageSize,
