@@ -1,6 +1,9 @@
 import { SetURLSearchParams } from "react-router-dom";
 import { Controller, useForm } from 'react-hook-form';
 import { DatePicker } from "@/components/date-picker";
+import { MultiSelect } from "@/components/multi-select";
+import { generateSelectOptions } from "@/utils/generate-options";
+import { OrderStatus } from "@/api/list-orders";
 
 
 export interface TFilterParams {
@@ -18,6 +21,7 @@ export const OrderTableFilters = ({
   filters,
   setSearchParams
 }: OrderTableFiltersProps) => {
+  const statusOptions = generateSelectOptions(OrderStatus);
   const { handleSubmit, control } = useForm<TFilterParams>({
     defaultValues: {
       filterByDate: filters.filterByDate ?? "",
@@ -39,7 +43,7 @@ export const OrderTableFilters = ({
       }
 
       if (statuses.length > 0) {
-        prev.set('status', statuses.toString());
+        prev.set('status', statuses.join(',') || "");
       } else {
         prev.delete('status');
       }
@@ -68,6 +72,17 @@ export const OrderTableFilters = ({
           <DatePicker
             date={field.value ?? undefined}
             handleChange={field.onChange}
+          />
+        )}
+      />
+      <Controller
+        name="filterByStatus"
+        control={control}
+        render={({ field }) => (
+          <MultiSelect
+            options={statusOptions}
+            selected={field.value}
+            setSelected={field.onChange}
           />
         )}
       />

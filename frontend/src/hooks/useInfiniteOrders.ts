@@ -8,7 +8,7 @@ export const useInfiniteOrders = ({
   filterByDate = undefined,
  }: ListOrdersRequest) => {
   return useInfiniteQuery(
-    ['listOrders', filterByDate],
+    ['listOrders', filterByDate, filterByStatus],
     ({ pageParam = 1 }) => listOrders({
       pageNumber: pageParam,
       pageSize,

@@ -5,13 +5,17 @@ import { Fragment } from "react/jsx-runtime";
 import { OrdersTable } from "./orders-table";
 import { useSearchParams } from "react-router-dom";
 import { OrderTableFilters } from "./order-table-filter";
+import { OrderStatus } from "@/api/list-orders";
+import { mapStringsToEnumValues } from "@/utils/generate-enum";
 
 export const Orders = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const filterByStatus = searchParams.getAll('status');
+  const filterByStatus = searchParams.get('status')?.split(',') || [];
   const filterByProducts = searchParams.getAll('products');
   const filterByDate = searchParams.get('filterByDate');
+
+  console.log(filterByStatus)
 
   const {
     data,
@@ -22,7 +26,7 @@ export const Orders = () => {
   } = useInfiniteOrders({
     pageNumber: 1,
     pageSize: 15,
-    // filterByStatus: [OrderStatus.PENDING],
+    filterByStatus:  mapStringsToEnumValues(OrderStatus, filterByStatus),
     // filterByProducts: ['prod_1', 'prod_8'],
     filterByDate: filterByDate ? filterByDate : undefined
   });
