@@ -75,7 +75,7 @@ export const OrderTableFilters = ({
             options={statusOptions}
             selected={field.value}
             setSelected={field.onChange}
-            className="w-[300px] mt-2"
+            className="w-auto mt-2"
           />
         )}
       />
