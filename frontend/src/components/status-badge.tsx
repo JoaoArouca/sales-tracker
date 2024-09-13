@@ -21,7 +21,7 @@ export const StatusBadge = ({ status }: StatusBadgeProps) => {
   const { bgColor, textColor, dotColor } = statusStyles.get(status) || defaultStyles;
 
   return (
-    <div className={`flex justify-center items-center w-1/4 gap-2 px-2 py-1 rounded-md ${bgColor} ${textColor}`}>
+    <div className={`flex justify-center items-center w-1/2 gap-2 px-2 py-1 rounded-md ${bgColor} ${textColor}`}>
       <span className={`w-2 h-2 rounded-full ${dotColor}`}></span>
       <span className="text-sm font-medium">{capitalizeFirstLetter(status)}</span>
     </div>
